@@ -29,8 +29,10 @@ export const query = graphql`
 export default BlogPage
 
 /* gatsby has it's own graphQL data layer
-    o => our data is stored in *sources*.. a database or some file in our filesystem and etc..
-    o => we can move the data in sources into the gatsby data layer by using *source plugins*
-    o => we can then pull the data from the data layer by making graphQl queries.
-    o => we can inspect the data layer by going to http://localhost:8000/___graphql.. GraphiQL
+    o => Source plugins pull data from their original location into the Gatsby GraphQL data layer.
+    o=>You can use the GraphiQL endpoint (localhost:8000/___graphql) to explore the data in the data layer and design GraphQL queries.
+    o=>You can write GraphQL queries to pull data out of the data layer and into your React components.
+        o=>To pull data into a “building block” component, use the useStaticQuery hook.
+        o=>To pull data into a page component, use a page query.
+
 */
