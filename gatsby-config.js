@@ -17,6 +17,34 @@ module.exports = {
 				path: `${__dirname}/blog`,
 			},
 		},
-		'gatsby-plugin-mdx',
+		// A transformer plugin.. takes nodes created by a source plugin and converts them into new nodes with more useful content.
+		// however, it does not modify the source nodes.. so they're still there
+		'gatsby-plugin-mdx', // mdx is a markdown jsx formatter which is great for blog posts and things alike
+		// https://mdxjs.com/table-of-components => more on markdown
+		// This mdx plugin also allows for Frontmatter which could contain meta information about say a blog
+		/* 
+			This is a *frontmatter*. It goes at the top of our mdx file
+			---  
+			name: "Fun Facts about Red Pandas"
+			datePublished: "2021-07-12"
+			author: "#1 Red Panda Fan"
+			---
+
+			This plugin adds allMdx and mdx to the available graphQL queries in the datalayer. We can use these fields to access the contents of our mdx files
+		*/
+		// Also look into *remarks*, which can add additional features to our markdown
+		// https://remark.js.org/ 	https://www.gatsbyjs.com/plugins/gatsby-plugin-mdx/#gatsby-remark-plugins
+		/*
+					PRO TIP: transformer plugins add a reference to the original source plugin node in a field named parent..
+		  allMdx {
+			nodes {
+				parent {
+					... on File {
+					modifiedTime(formatString: "MMMM D, YYYY")
+					}
+				}
+			}
+		}
+		*/
 	],
 }
