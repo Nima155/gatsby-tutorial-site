@@ -19,7 +19,7 @@ const NavItem = styled.li`
 	padding-right: 2rem;
 `
 const StyledLink = styled(Link)`
-	color: red;
+	color: black;
 `
 
 const Layout = ({ pageTitle, children }) => {
