@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Link } from 'gatsby'
+import { Link, graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
 
 const LayoutContainerDiv = styled.div`
@@ -21,15 +21,39 @@ const NavItem = styled.li`
 const StyledLink = styled(Link)`
 	color: black;
 `
+// const
+const Header = styled.header`
+	font-size: 3rem;
+	color: gray;
+	font-weight: 700;
+	margin: 3rem 0;
+`
 
 const Layout = ({ pageTitle, children }) => {
+	const data = useStaticQuery(graphql`
+		query {
+			site {
+				siteMetadata {
+					title
+				}
+			}
+		}
+	`) // building block components should query the datalayer in this way.
+
 	return (
 		<LayoutContainerDiv>
-			<title>{pageTitle}</title>
+			<title>
+				{' '}
+				{pageTitle} | {data.site.siteMetadata.title}
+			</title>
+			<Header>{data.site.siteMetadata.title}</Header>
 			<nav>
 				<NavLinks>
 					<NavItem>
 						<StyledLink to="/">Home</StyledLink>
+					</NavItem>
+					<NavItem>
+						<StyledLink to="/blog">Blog</StyledLink>
 					</NavItem>
 					<NavItem>
 						<StyledLink to="/about">About</StyledLink>

@@ -1,7 +1,7 @@
 // Step 1: Import React
 import * as React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
-import Layout from '../components/Layout'
+import Layout from '../components/layout'
 // Step 2: Define your component
 
 const IndexPage = () => {
@@ -35,3 +35,5 @@ export default IndexPage
 
 // gatsby also has building-block components... which are basically smaller
 // reusable components
+
+// https://www.gatsbyjs.com/plugins => for more plugins...
