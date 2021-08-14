@@ -9,6 +9,7 @@ module.exports = {
 		'gatsby-plugin-gatsby-cloud',
 		'gatsby-plugin-image',
 		'gatsby-plugin-sharp',
+		'gatsby-transformer-sharp',
 		{
 			// setting up a source plugin with its own config
 			resolve: 'gatsby-source-filesystem',
