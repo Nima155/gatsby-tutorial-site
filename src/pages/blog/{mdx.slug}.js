@@ -61,3 +61,6 @@ export default BlogPost
 // When you use Gatsby’s File System Route API, it automatically adds some props into the page template component for each page:
 // 		o => The id for the data layer node it used to create the page.
 // 		o => The field you used to create the dynamic part of the route. (In this case, the slug field.)
+
+// Use the StaticImage component if your component always renders the same image (from a relative path or a remote URL).
+// Use the GatsbyImage component if the image source is changes for different instances of your component (like if it gets passed in as a prop).
